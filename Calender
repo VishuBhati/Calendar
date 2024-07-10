@@ -1,0 +1,26 @@
+from tkinter import *
+from tkcalendar import *
+
+win=Tk()
+win.title("CALENDAR")
+win.geometry("700x500")
+
+cal=Calendar(win,selectmode="day",year=2021,month=3,day=3,font=["Algerian",30])
+cal.pack(pady=20)
+
+
+def dsf():
+            win.destroy()
+
+def get_date():
+            label.config(text=cal.get_date())
+            
+btn=Button(win,text="Select Date",command=get_date,bg="light green",font=["Algerian",18]).pack(pady=20)
+
+label=Label(win,text="")
+label.pack(pady=20)
+
+thr=Button(win,text="EXIT",command=dsf,bg="red",font=["Algerian",18]).pack(pady=5)
+
+win.attributes('-fullscreen',True)
+win.mainloop()
